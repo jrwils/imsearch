@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load staticfiles %}
+<link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="{% static 'css/imsearch.css' %}" />
+<script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+
+<title>{% block title %}Imgur Video Search{% endblock %}</title>
+</head>
+<body>
+        {% block page_header %}
+            <div id ="page_header">
+                <div id="page_header_logo">
+                    <img src="{% static 'images/imgur_logo.png' %}">
+                </div>
+                <div id="page_header_text">
+                    <h4></h4>
+                </div>
+                <div id="page_header_text_right">
+                    {% block page_descript %}
+                        <h4><a class ="whitelink" href="{% url 'search_screen' %}">
+                        Imgur Video Search
+                        </a></h4>
+                    {% endblock %}
+                </div>
+            </div>
+        {% endblock %}
+
+        <div id="page_body">
+            {% block body %}
+            {% endblock %}
+        </div>
+</body>
+</html>

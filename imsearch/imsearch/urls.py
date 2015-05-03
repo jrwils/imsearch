@@ -1,10 +1,7 @@
 from django.conf.urls import patterns, include, url
-from django.contrib import admin
+# from django.contrib import admin
+from imapp import views as imapp_views
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'imsearch.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
-    url(r'^admin/', include(admin.site.urls)),
-)
+                       url(r'^$', imapp_views.search_input,
+                           name='search_screen'),)

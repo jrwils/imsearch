@@ -12,5 +12,9 @@
                     <td>{{ video.mp4 }}</td>
                 <tr>
             </table>
+            <iframe src="{{ video.mp4 }}" width="{{ video.width }}" 
+                height="{{ video.height }}" frameborder="0" 
+                webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+            </iframe>
         {% endfor %}
     {% endblock %}

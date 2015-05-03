@@ -14,4 +14,5 @@ class ImgurVideoSearch(object):
         r = requests.get(self.api_url,
                          headers=self.headers,
                          params=srch_params)
-        return r.json()
+        r_json = r.json()
+        return r_json

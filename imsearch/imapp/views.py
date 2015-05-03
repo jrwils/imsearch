@@ -4,4 +4,4 @@ from imapp.forms import SearchForm
 
 def search_input(request):
     search_form = SearchForm()
-    return render(request, {'search_form': search_form})
+    return render(request, 'search.html', {'search_form': search_form})

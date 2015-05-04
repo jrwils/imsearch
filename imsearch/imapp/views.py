@@ -16,5 +16,7 @@ def search_results(request):
         iv_search = ImgurVideoSearch()
         iv_results = iv_search.search(search_string)
         video_data = iv_results.get('data')
-        return render(request, 'results.html', {'video_data': video_data})
+        num_videos = len(video_data)
+        return render(request, 'results.html', {'video_data': video_data,
+                                                'num_videos': num_videos})
     return HttpResponseRedirect(reverse('search_screen'))

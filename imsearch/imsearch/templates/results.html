@@ -7,15 +7,16 @@
         {% endif %}
 
         {% if num_videos > 0 %}
+            
             {% for video in video_data %}
 
                 {% if forloop.counter0 == 0 %}
                     <iframe src="{{ video.mp4 }}" width="{{ video.width|add:'150' }}"
                         height="{{ video.height|add:'150' }}" frameborder="0" 
                         webkitAllowFullScreen mozallowfullscreen allowFullScreen>
-                    </iframe>    
+                    </iframe>
+                    <h3><span id="video_num">1</span> of {{ num_videos }}</h3>   
                 {% endif %}
-
 
                 {% if forloop.counter0 == 0 %}
                     <button class='prev_button'>Previous</button>

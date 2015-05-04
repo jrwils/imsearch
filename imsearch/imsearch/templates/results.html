@@ -41,6 +41,7 @@
                         <td>{{ video.mp4 }}</td>
                     <tr>
                 </table>
+                <input type="hidden" id="clip_{{ forloop.counter0 }}" value="{{ video.mp4 }}">
             {% endfor %}                    
         {% endif %}
     {% endblock %}

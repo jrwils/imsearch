@@ -21,9 +21,9 @@
                 {% if forloop.counter0 == 0 %}
                     <button class='prev_button'>Previous</button>
                     <button class='next_button'>Next</button>
-                    <table id="desc_table_{{ forloop.counter0 }}">
+                    <table id="desc_table_{{ forloop.counter0 }}" class="desc_table">
                 {% else %}
-                    <table id="desc_table_{{ forloop.counter0 }}" style="display: none;">
+                    <table id="desc_table_{{ forloop.counter0 }}" class="desc_table" style="display: none;">
                 {% endif %}
                     <tr>
                         <td>Title</td>

@@ -9,7 +9,10 @@
                 </iframe>    
             {% endif %}
 
+
             {% if forloop.counter0 == 0 %}
+                <button class='prev_button'>Previous</button>
+                <button class='next_button'>Next</button>
                 <table id="desc_table_{{ forloop.counter0 }}">
             {% else %}
                 <table id="desc_table_{{ forloop.counter0 }}" style="display: none;">

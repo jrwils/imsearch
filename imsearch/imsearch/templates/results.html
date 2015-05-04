@@ -1,30 +1,47 @@
 {% extends "base.html" %}
 
     {% block body %}
-        {% for video in video_data %}
-            {% if forloop.counter0 == 0 %}
-                <iframe src="{{ video.mp4 }}" width="{{ video.width|add:'150' }}"
-                    height="{{ video.height|add:'150' }}" frameborder="0" 
-                    webkitAllowFullScreen mozallowfullscreen allowFullScreen>
-                </iframe>    
-            {% endif %}
+
+        {% if num_videos == 0 %}
+            <h3>No results found</h3>
+        {% endif %}
+
+        {% if num_videos > 0 %}
+            {% for video in video_data %}
+
+                {% if forloop.counter0 == 0 %}
+                    <iframe src="{{ video.mp4 }}" width="{{ video.width|add:'150' }}"
+                        height="{{ video.height|add:'150' }}" frameborder="0" 
+                        webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+                    </iframe>    
+                {% endif %}
 
 
-            {% if forloop.counter0 == 0 %}
-                <button class='prev_button'>Previous</button>
-                <button class='next_button'>Next</button>
-                <table id="desc_table_{{ forloop.counter0 }}">
-            {% else %}
-                <table id="desc_table_{{ forloop.counter0 }}" style="display: none;">
-            {% endif %}
-                <tr>
-                    <td>Title</td>
-                    <td>{{ video.title }}</td>
-                <tr>
-                <tr>
-                    <td>URL</td>
-                    <td>{{ video.mp4 }}</td>
-                <tr>
-            </table>
-        {% endfor %}
+                {% if forloop.counter0 == 0 %}
+                    <button class='prev_button'>Previous</button>
+                    <button class='next_button'>Next</button>
+                    <table id="desc_table_{{ forloop.counter0 }}">
+                {% else %}
+                    <table id="desc_table_{{ forloop.counter0 }}" style="display: none;">
+                {% endif %}
+                    <tr>
+                        <td>Title</td>
+                        <td>{{ video.title }}</td>
+                    <tr>
+                    <tr>
+                        <td>Date/Time Posted</td>
+                        <td>{{ video.datetime }}</td>
+                    <tr>
+                    <tr>
+                        <td>Views</td>
+                        <td>{{ video.views }}</td>
+                    <tr>
+                    <tr>
+                        <td>URL</td>
+                        <td>{{ video.mp4 }}</td>
+                    <tr>
+                </table>
+            {% endfor %}                    
+        {% endif %}
     {% endblock %}
+

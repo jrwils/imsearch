@@ -46,3 +46,12 @@ function nextClip(direction) {
 
     showNavButtons(nextTableNum);
 }
+
+$(document).ready(function() {
+    $("#next_button").click(function() {
+        nextClip("forward");
+    });
+    $("#prev_button").click(function() {
+        nextClip("backward");
+    });
+});

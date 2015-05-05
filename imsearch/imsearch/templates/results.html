@@ -28,19 +28,15 @@
                     <tr>
                         <td>Title</td>
                         <td>{{ video.title }}</td>
-                    <tr>
-                    <tr>
-                        <td>Date/Time Posted</td>
-                        <td>{{ video.datetime }}</td>
-                    <tr>
-                    <tr>
+                    </tr>
+                    </tr>
                         <td>Views</td>
                         <td>{{ video.views }}</td>
-                    <tr>
+                    </tr>
                     <tr>
                         <td>URL</td>
                         <td>{{ video.mp4 }}</td>
-                    <tr>
+                    </tr>
                 </table>
                 <input type="hidden" id="clip_{{ forloop.counter0 }}" value="{{ video.mp4 }}">
             {% endfor %}                    

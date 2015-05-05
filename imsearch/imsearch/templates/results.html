@@ -49,8 +49,12 @@
                             <td>{{ video.downs }}</td>
                         </tr>
                         <tr>
-                            <td>URL</td>
+                            <td>mp4 URL</td>
                             <td>{{ video.mp4 }}</td>
+                        </tr>
+                        <tr>
+                            <td>webm URL</td>
+                            <td>{{ video.webm }}</td>
                         </tr>
                     </table>
                     <input type="hidden" id="clip_{{ forloop.counter0 }}" value="{{ video.webm }}">

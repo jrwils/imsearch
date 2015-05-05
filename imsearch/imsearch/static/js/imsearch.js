@@ -2,10 +2,18 @@ function setCurrentNum(clipNum) {
     $("#video_num").html(clipNum); 
 }
 
-function nextClip() {
+function nextClip(direction) {
     var currentDescTable = $(".desc_table").filter(":visible")[0];
     var currentTableNum = currentDescTable.id.replace("desc_table_", "");
-    var nextTableNum = parseInt(currentTableNum) + 1;
+
+    if (direction=='forward') {
+        var nextTableNum = parseInt(currentTableNum) + 1;
+    } else if (direction=='backward') {
+        var nextTableNum = parseInt(currentTableNum) - 1;
+    } else {
+        // return if no direction given
+        return
+    }
     var nextDescTable = $("#desc_table_" + nextTableNum.toString())[0];
 
     var clipInp = $("#clip_" + nextTableNum.toString());

@@ -11,10 +11,8 @@
             {% for video in video_data %}
 
                 {% if forloop.counter0 == 0 %}
-                    <iframe id ="video_embed" src="{{ video.mp4 }}" width="{{ video.width|add:'150' }}"
-                        height="{{ video.height|add:'150' }}" frameborder="0" 
-                        webkitAllowFullScreen mozallowfullscreen allowFullScreen>
-                    </iframe>
+
+                    <video id ="video_embed" src="{{ video.mp4 }}" controls></video>
                     <h3><span id="video_num">1</span> of {{ num_videos }}</h3>   
                 {% endif %}
 

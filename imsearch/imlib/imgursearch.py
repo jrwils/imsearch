@@ -3,8 +3,8 @@ from get_config import get_config
 
 
 class ImgurVideoSearch(object):
-    def __init__(self):
-        self.api_url = 'https://api.imgur.com/3/gallery/search/time/'
+    def __init__(self, sort_by):
+        self.api_url = 'https://api.imgur.com/3/gallery/search/{}/'.format(sort_by)
         self.imgur_key = get_config('imlib.cfg', 'api_keys', 'imgur')
         self.headers = {'Authorization': 'Client-ID ' + self.imgur_key}
 

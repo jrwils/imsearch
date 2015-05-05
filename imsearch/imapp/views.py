@@ -13,7 +13,8 @@ def search_input(request):
 def search_results(request):
     if request.method == 'POST':
         search_string = request.POST['search_query']
-        iv_search = ImgurVideoSearch()
+        search_sort = request.POST['sort_by']
+        iv_search = ImgurVideoSearch(search_sort)
         iv_results = iv_search.search(search_string)
         video_data = iv_results.get('data')
         num_videos = len(video_data)

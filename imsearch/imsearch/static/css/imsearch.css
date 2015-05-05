@@ -33,6 +33,11 @@ a {
     margin-bottom: 20px;
 }
 
+#video_embed {
+    height: 300px;
+    width: auto;
+}
+
 .desc_table {
     margin: auto;
 }

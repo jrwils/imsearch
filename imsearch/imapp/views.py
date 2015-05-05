@@ -6,7 +6,7 @@ from imlib.imgursearch import ImgurVideoSearch
 
 
 def search_input(request):
-    search_form = SearchForm()
+    search_form = SearchForm(initial={'sort_by': 'time'})
     return render(request, 'search.html', {'search_form': search_form})
 
 

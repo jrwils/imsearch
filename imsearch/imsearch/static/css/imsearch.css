@@ -2,6 +2,10 @@ li {
     list-style-type: none;
 }
 
+a {
+    text-decoration: none;
+}
+
 #page_header {
     width: 100%;
     background-color: #E1E1E8;
@@ -11,7 +15,28 @@ li {
 }
 
 #page_body {
-    width: 500px;
-    margin: auto;
+    width: 100%;
     margin-top: 30px;
+}
+
+#page_results {
+    width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+#nav_buttons {
+    margin-bottom: 20px;
+}
+
+.desc_table {
+    margin: auto;
+}
+
+.desc_table tr:nth-child(even) {
+	background-color: #dae5f4;
+}
+
+.desc_table td {
+    max-width: 350px;
 }

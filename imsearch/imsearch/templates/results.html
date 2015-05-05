@@ -2,50 +2,55 @@
 
     {% block body %}
 
-        {% if num_videos == 0 %}
-            <h3>No results found</h3>
-        {% endif %}
+        <div id="page_results">
 
-        {% if num_videos > 0 %}
-            
-            {% for video in video_data %}
+            {% if num_videos == 0 %}
+                <h3>No results found</h3>
+            {% endif %}
 
-                {% if forloop.counter0 == 0 %}
+            {% if num_videos > 0 %}
+                
+                {% for video in video_data %}
 
-                    <video id ="video_embed" src="{{ video.webm }}" controls></video>
-                    <h3><span id="video_num">1</span> of {{ num_videos }}</h3>   
-                {% endif %}
+                    {% if forloop.counter0 == 0 %}
 
-                {% if forloop.counter0 == 0 %}
-                    <button id='prev_button' style="display: none;">Previous</button>
-                    <button id='next_button'>Next</button>
-                    <table id="desc_table_{{ forloop.counter0 }}" class="desc_table">
-                {% else %}
-                    <table id="desc_table_{{ forloop.counter0 }}" class="desc_table" style="display: none;">
-                {% endif %}
-                    <tr>
-                        <td>Title</td>
-                        <td>{{ video.title }}</td>
-                    </tr>
-                    <tr>
-                        <td>Views</td>
-                        <td>{{ video.views }}</td>
-                    </tr>
-                    <tr>
-                        <td>Up Votes</td>
-                        <td>{{ video.ups }}</td>
-                    </tr>
-                    <tr>
-                        <td>Down Votes</td>
-                        <td>{{ video.downs }}</td>
-                    </tr>
-                    <tr>
-                        <td>URL</td>
-                        <td>{{ video.mp4 }}</td>
-                    </tr>
-                </table>
-                <input type="hidden" id="clip_{{ forloop.counter0 }}" value="{{ video.webm }}">
-            {% endfor %}                    
-        {% endif %}
+                        <video id ="video_embed" src="{{ video.webm }}" controls></video>
+                        <h3><span id="video_num">1</span> of {{ num_videos }}</h3>   
+                    {% endif %}
+
+                    {% if forloop.counter0 == 0 %}
+                        <div id="nav_buttons">
+                            <button id='prev_button' style="display: none;">Previous</button>
+                            <button id='next_button'>Next</button>
+                        </div>
+                        <table id="desc_table_{{ forloop.counter0 }}" class="desc_table">
+                    {% else %}
+                        <table id="desc_table_{{ forloop.counter0 }}" class="desc_table" style="display: none;">
+                    {% endif %}
+                        <tr>
+                            <td>Title</td>
+                            <td>{{ video.title }}</td>
+                        </tr>
+                        <tr>
+                            <td>Views</td>
+                            <td>{{ video.views }}</td>
+                        </tr>
+                        <tr>
+                            <td>Up Votes</td>
+                            <td>{{ video.ups }}</td>
+                        </tr>
+                        <tr>
+                            <td>Down Votes</td>
+                            <td>{{ video.downs }}</td>
+                        </tr>
+                        <tr>
+                            <td>URL</td>
+                            <td>{{ video.mp4 }}</td>
+                        </tr>
+                    </table>
+                    <input type="hidden" id="clip_{{ forloop.counter0 }}" value="{{ video.webm }}">
+                {% endfor %}                    
+            {% endif %}
+        </div>
     {% endblock %}
 

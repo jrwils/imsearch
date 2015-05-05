@@ -12,7 +12,7 @@
 
                 {% if forloop.counter0 == 0 %}
 
-                    <video id ="video_embed" src="{{ video.mp4 }}" controls></video>
+                    <video id ="video_embed" src="{{ video.webm }}" controls></video>
                     <h3><span id="video_num">1</span> of {{ num_videos }}</h3>   
                 {% endif %}
 
@@ -44,7 +44,7 @@
                         <td>{{ video.mp4 }}</td>
                     </tr>
                 </table>
-                <input type="hidden" id="clip_{{ forloop.counter0 }}" value="{{ video.mp4 }}">
+                <input type="hidden" id="clip_{{ forloop.counter0 }}" value="{{ video.webm }}">
             {% endfor %}                    
         {% endif %}
     {% endblock %}

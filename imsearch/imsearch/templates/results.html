@@ -9,13 +9,13 @@
             {% endif %}
 
             {% if num_videos > 0 %}
-                
+
                 {% for video in video_data %}
 
                     {% if forloop.counter0 == 0 %}
 
                         <video id ="video_embed" src="{{ video.webm }}" controls></video>
-                        <h3><span id="video_num">1</span> of {{ num_videos }}</h3>   
+                        <h3><span id="video_num">1</span> of {{ num_videos }}</h3>
                     {% endif %}
 
                     {% if forloop.counter0 == 0 %}
@@ -36,6 +36,10 @@
                             <td>{{ video.views }}</td>
                         </tr>
                         <tr>
+                            <td>Date/Time Posted</td>
+                            <td>{{ video.datetime }}</td>
+                        </tr>
+                        <tr>
                             <td>Up Votes</td>
                             <td>{{ video.ups }}</td>
                         </tr>
@@ -49,7 +53,7 @@
                         </tr>
                     </table>
                     <input type="hidden" id="clip_{{ forloop.counter0 }}" value="{{ video.webm }}">
-                {% endfor %}                    
+                {% endfor %}
             {% endif %}
         </div>
     {% endblock %}

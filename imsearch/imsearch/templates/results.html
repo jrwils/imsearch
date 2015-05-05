@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load epoch_time %}
 
     {% block body %}
 
@@ -37,7 +38,7 @@
                         </tr>
                         <tr>
                             <td>Date/Time Posted</td>
-                            <td>{{ video.datetime }}</td>
+                            <td>{{ video.datetime|epoch_time }}</td>
                         </tr>
                         <tr>
                             <td>Up Votes</td>

@@ -12,16 +12,9 @@
 <body>
         {% block page_header %}
             <div id ="page_header">
-                <div id="page_header_text">
-                    <h4></h4>
-                </div>
-                <div id="page_header_text_right">
-                    {% block page_descript %}
-                        <h4><a class ="whitelink" href="{% url 'search_screen' %}">
-                        Imgur Video Search
-                        </a></h4>
-                    {% endblock %}
-                </div>
+                <h4><a class ="whitelink" href="{% url 'search_screen' %}">
+                Imgur Video Search
+                </a></h4>
             </div>
         {% endblock %}
 
